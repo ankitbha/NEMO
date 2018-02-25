@@ -4,7 +4,7 @@ import csv
 import pandas as pd
 
 
-def det_data(file1, file2):
+def get_data(file1, file2):
 	col_names = ['song_id', 'valence_mean', 'valence_std', 'arousal_mean', 'arousal_std']
 
 	df = pd.read_csv(file1, names = col_names)
@@ -17,7 +17,7 @@ def det_data(file1, file2):
 	data2 = []
 	for j in range(1,len(column1)):
 		if(j != 1745):
-			data2.append(column1[j])
+			data2.append(column1[j]+"s")
 
 
 	cv1 = df['valence_mean']
@@ -31,8 +31,8 @@ def det_data(file1, file2):
 
 	for i in range(1,len(cv1)):
 		if(i != 1745):
-			temp = (cv1[i], cv2[i])
+			temp = [float(cv1[i]), float(cv2[i])]
 			data1.append(temp)
 
 
-	return data1, data2
+	return data2, data1
