@@ -6,6 +6,8 @@ from get_from_image import get_im_data
 from join_and_get import get_data
 from annoy import AnnoyIndex
 
+# run like this : python  finalcode.py ./im_arousal.txt ./im_valence.txt ./static_annotations_averaged_songs_1_2000.csv ./static_annotations_averaged_songs_2000_2058.csv
+
 file1 = sys.argv[1]
 file2 = sys.argv[2]
 file3 = sys.argv[3]
